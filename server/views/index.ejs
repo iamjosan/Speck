@@ -1,0 +1,69 @@
+<!doctype html>
+	<head>
+		<title>Speck | Intuitive Data Visualization</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+	</head>
+	<body>
+		<canvas id="chart" width="400" height="400"></canvas>
+	</body>
+	<script src="./scripts/Chart.js"></script>
+	<script>
+		var ctx = document.querySelector('#chart').getContext('2d');
+		var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        datasets: [
+				{data: [1,1,1,1,1,1], label: 'pie'},
+				{data: [1,1,1,1,1,1], type:'pie', backgroundColor: '#eee'},
+				{data: [1,1,1,1,1,1], type:'pie', backgroundColor: '#eee'},
+				{data: [
+					{x: 1, y:1, r: 10},
+						{x: 2, y:2, r: 50},
+						{x: 3, y: 3, r: 100},
+						{x: -6, y: -6, r: 10},
+						{x: 5, y: 5, r:10},
+						{x:6, y: 6, r: 20},
+						{x: -5, y: 3, r: 45}
+					],
+					type: 'bubble',
+					label: 'bubble',
+					backgroundColor: '#ed3d55'
+					},
+					{data: [
+						{x: 2, y: 1, r: 60},
+						{x: -3, y:-1, r: 55},
+						{x: 4, y: -2, r: 25}
+						],
+						type: 'bubble',
+						backgroundColor: '#4286f4'
+						}
+				]
+    },
+		options: {
+			scales: {
+				xAxes: [{
+					type: 'linear',
+					position: 'bottom',
+					gridLines: {
+						display: true,
+						drawBorder: true,
+						drawTicks: true
+						},
+						ticks: {display:true}
+					}],
+				yAxes: [{
+					type:'linear',
+					position:'left',
+					gridLines: {
+						display: true,
+						drawBorder: true,
+						drawTicks: true
+						},
+						ticks: {display:true}
+					}]
+				}
+			},
+			cutOutPercentage: 0
+});
+	</script>
+</html>
