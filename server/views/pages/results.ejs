@@ -1,0 +1,118 @@
+<!doctype html>
+	<head>
+		<title>Speck | Intuitive Data Visualization</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<style>
+		body{
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			padding:0;
+			margin:0;
+		}
+		#graph-container{
+			width:500px;
+			}
+			#link{
+			position:fixed;
+			top:15px;
+			right:15px;
+			padding:5px 10px;
+			text-decoration:none;
+			border:1px solid #eee;
+			border-radius:5px;
+			color:#333;
+			font-family:helvetica, sans-serif;
+			}
+			#link:hover{
+			border-bottom:2px solid #333;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="/" id="link">Start Over</a>
+		<div id="graph-container">
+			<canvas id="chart" width="150" height="150"></canvas>
+		</div><!--end graph-container-->
+	</body>
+	<script src="./scripts/Chart.js"></script>
+	<script>
+		var resultData = <%- results %>
+		var ctx = document.querySelector('#chart').getContext('2d');
+		var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        datasets: [
+				{data: [
+					{x: 2, y:0, r: 5 * resultData[0]},
+					{x: 3.97, y: 2.17, r: 7.5 * resultData[6]}
+					],
+					type: 'bubble',
+					backgroundColor: 'rgba(234, 32, 39, 0.9)'
+					},
+					{data: [
+						{x: 0.75, y:1.85, r: 5 * resultData[1]},
+						{x: 0, y: 4.5, r: 7.5 * resultData[7]}
+					],
+					type: 'bubble',
+					backgroundColor: 'rgba(238, 90, 36, 0.9)'
+					},
+					{data: [
+						{x: -0.78, y: 1.84, r: 5 * resultData[2]},
+						{x: -3.76, y: 2.64, r:7.5 * resultData[8]}
+					],
+					type: 'bubble',
+					backgroundColor: 'rgba(255, 195, 18, 0.9)'
+					},
+					{data: [
+						{x: -2, y: 0, r: 5 * resultData[3]},
+						{x: -3.6, y: -2.64, r:7.5 * resultData[9]}
+					],
+					type: 'bubble',
+					backgroundColor: 'rgba(0, 148, 50, 0.9)'
+					},
+					{data: [
+						{x: -0.78, y: -1.84, r:5 * resultData[4]},
+						{x: 0, y: -4.5, r:7.5 * resultData[10]}
+					],
+					type: 'bubble',
+					backgroundColor: 'rgba(6, 82, 221, 0.9)'
+					},
+					{data: [
+						{x:0.78, y: -1.84, r: 5 * resultData[5]},
+						{x: 3.97, y: -2.17, r: 7.5 * resultData[11]},
+					],
+					type: 'bubble',
+					backgroundColor: 'rgba(111, 30, 81, 0.9)'
+					}
+				]
+    },
+		options: {
+		responsive: true,
+		maintainAspectRatio: true,
+			scales: {
+				xAxes: [{
+					type: 'linear',
+					position: 'bottom',
+					gridLines: {
+						display: false,
+						drawBorder: false,
+						drawTicks: false
+						},
+						ticks: {display:false, max: 7, min: -7}
+					}],
+				yAxes: [{
+					type:'linear',
+					position:'left',
+					gridLines: {
+						display: false,
+						drawBorder: false,
+						drawTicks: false
+						},
+						ticks: {display:false, max: 7, min: -7}
+					}]
+				}
+			}
+});
+	</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speck</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+    <h1 class="text-center">Softskills</h1>
+    <form id="soft-form" action="/results" method="post">
+        <h3>Please rate your skills from 1 to 10:</h3>
+        <% include ../partials/soft-form %>
+    <h1 class="text-center">Hardskills</h1>
+			<% include ../partials/hard-form %>
+			<div class="form-group">
+				<input class="form-control" type="submit" value="Submit" name="submit-btn" />
+			</div><!--end form-group-->
+    </form>
+		</div>
+		</div>
+	</div><!--end container-->
+    <script
+        src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script>
+        document.querySelector("form").addEventListener("change", function(e) {
+  e.target.nextElementSibling.value = e.target.value;
+});
+</script>
+</body>
+
+</html>

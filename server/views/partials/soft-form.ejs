@@ -1,0 +1,17 @@
+<% 
+const softSkill = [
+        "Leadership",
+        "Communication",
+        "Evaluation",
+        "Organization",
+				"Design",
+        "Problem_Solving"
+				];
+
+softSkill.forEach(skill => { %>
+    <div class="form-group">
+			<label><%= skill %></label>
+			<input class="form-control" type="range" list="tickmarks" min="1" max="10" value="1" name=<%= skill%> >
+			<output for=<%= skill%> >1</output>
+		</div><!--end form-group-->
+<% }); %>

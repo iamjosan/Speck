@@ -1,17 +1,16 @@
 {
-  "name": "hackathon-app",
+  "name": "speck",
   "version": "1.0.0",
-  "description": "app for hackathon",
+  "description": "Intiutive data visualization for HR and job seekers.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "author": "Josan and Friends",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.2",
     "chart.js": "^2.7.2",
-    "d3": "^4.13.0",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "jsdom": "^11.6.2"
